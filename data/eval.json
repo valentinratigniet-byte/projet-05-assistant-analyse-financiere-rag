@@ -1,0 +1,10 @@
+[
+  {"question": "Quel est le chiffre d'affaires 2024 ?", "expect": "145.0", "doc": "2024"},
+  {"question": "Quel est le résultat net 2023 ?", "expect": "12.5", "doc": "2023"},
+  {"question": "Combien d'employés en 2024 ?", "expect": "850", "doc": "2024"},
+  {"question": "Quelle est la trésorerie disponible en 2024 ?", "expect": "34.0", "doc": "2024"},
+  {"question": "Quelle est la marge nette 2024 ?", "expect": "13.1", "doc": "2024"},
+  {"question": "Quel dividende est proposé pour 2023 ?", "expect": "4.0", "doc": "2023"},
+  {"question": "Quelle est la part de l'Europe dans le chiffre d'affaires 2024 ?", "expect": "58", "doc": "2024"},
+  {"question": "Quel est le cours de bourse de l'action ACME ?", "expect": "__ABSENT__", "doc": null}
+]

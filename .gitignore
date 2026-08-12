@@ -1,0 +1,15 @@
+# Index vectoriel régénéré par build_index()
+data/chunks.json
+data/embeddings.npy
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Cache modèles fastembed
+.fastembed_cache/
+
+# Secrets
+.env
