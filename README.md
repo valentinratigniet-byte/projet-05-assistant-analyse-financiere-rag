@@ -16,17 +16,16 @@ sources, et de dire « je ne sais pas » sinon.
 
 ## ⚙️ Méthode (pipeline RAG)
 
-```
-PDF rapports ──► extraction (pdfplumber) ──► chunking par page
-      │
-      ▼
-embeddings locaux (fastembed, multilingue, SANS clé API)
-      │
-      ▼
-question ──► similarité cosinus ──► top-k passages + citations
-      │
-      ▼
-Claude (garde-fous) ──► réponse SOURCÉE  ·  ou refus explicite
+```mermaid
+flowchart LR
+    PDF[("Rapports PDF")] -->|pdfplumber| CHUNK["Chunking<br/>par page"]
+    CHUNK -->|fastembed, sans clé| EMB[("Index vectoriel<br/>embeddings locaux")]
+    Q["Question utilisateur"] -->|similarité cosinus| EMB
+    EMB --> TOPK["Top-k passages<br/>+ citations (doc, page)"]
+    TOPK -->|Claude + garde-fous| ANSWER["Réponse sourcée<br/>ou refus explicite"]
+
+    style ANSWER fill:#137A8B,color:#fff
+    style PDF fill:#E4A93C,color:#1a1a1a
 ```
 
 - **Récupération** : `fastembed` (embeddings locaux, aucune clé) + cosinus NumPy.
