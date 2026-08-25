@@ -1,5 +1,8 @@
 # Projet 05 — Assistant d'analyse financière (RAG / LLM)
 
+[![CI](https://github.com/valentinratigniet-byte/projet-05-assistant-analyse-financiere-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/valentinratigniet-byte/projet-05-assistant-analyse-financiere-rag/actions/workflows/ci.yml)
+*(la CI vérifie le rappel de récupération sans clé API — la génération Claude n'y est pas testée, voir plus bas)*
+
 > **« Quel était le résultat net en 2023 ? »** — pose la question en langage
 > naturel, l'assistant répond **avec ses sources** (fichier + page) et **refuse
 > d'inventer** quand l'information n'est pas dans les documents. C'est la pièce

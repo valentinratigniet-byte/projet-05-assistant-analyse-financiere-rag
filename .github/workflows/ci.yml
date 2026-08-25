@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  retrieval-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Générer les 2 rapports PDF de test
+        run: python src/generate_reports.py
+
+      - name: Construire l'index vectoriel (embeddings locaux, sans clé API)
+        run: python -c "import sys; sys.path.insert(0,'src'); import rag; print(rag.build_index(), 'passages')"
+
+      - name: Évaluer la récupération (sans ANTHROPIC_API_KEY : pas de test de génération LLM ici)
+        run: python src/evaluate.py | tee eval_output.txt
+
+      - name: Vérifier que le rappel de récupération est de 100 %
+        run: |
+          python - <<'PY'
+          import re
+          text = open("eval_output.txt", encoding="utf-8").read()
+          m = re.search(r"Rappel r.cup.ration\s*:\s*(\d+)/(\d+)", text)
+          hits, total = int(m.group(1)), int(m.group(2))
+          print(f"Rappel récupération : {hits}/{total}")
+          assert hits == total, f"{total - hits} question(s) non récupérée(s) correctement"
+          PY
