@@ -22,7 +22,7 @@ jobs:
       - name: Construire l'index vectoriel (embeddings locaux, sans clé API)
         run: python -c "import sys; sys.path.insert(0,'src'); import rag; print(rag.build_index(), 'passages')"
 
-      - name: Évaluer la récupération (sans ANTHROPIC_API_KEY : pas de test de génération LLM ici)
+      - name: "Évaluer la récupération (sans ANTHROPIC_API_KEY — pas de test de génération LLM ici)"
         run: python src/evaluate.py | tee eval_output.txt
 
       - name: Vérifier que le rappel de récupération est de 100 %
