@@ -98,4 +98,4 @@ vectoriel régénérable n'est pas versionné (voir `.gitignore`).
 ---
 
 *Projet 05 du [Portfolio Data](https://github.com/valentinratigniet-byte) — la brique IA/LLM. Réutilise l'identité
-« Petrol & Ambre » du portfolio. Clôt la roadmap des 12 projets.*
+« Petrol & Ambre » du portfolio.*
