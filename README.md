@@ -9,6 +9,8 @@
 > maîtresse du portfolio : un système RAG (Retrieval-Augmented Generation) dont
 > les garde-fous anti-hallucination sont **mesurés**, pas seulement affirmés.
 
+🗺️ **[Schéma du dépôt (GitDiagram)](https://gitdiagram.com/valentinratigniet-byte/projet-05-assistant-analyse-financiere-rag)** : vue d'ensemble générée automatiquement à partir du code.
+
 ## 🧠 Le problème
 
 Un LLM seul hallucine des chiffres plausibles mais faux — inacceptable en
