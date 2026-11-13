@@ -49,6 +49,11 @@ flowchart LR
 | **Rappel de récupération** (le bon chiffre est-il dans les k passages ?) | **7/7 = 100 %** (k=4) |
 | **Refus correct** sur les questions hors-documents | garde-fou testé dans `evaluate.py` |
 
+**À lire avec ce chiffre** : les deux rapports ne donnent que **6 passages** une fois découpés. À k=4,
+l'assistant lit donc les deux tiers de l'index, et un rappel de 100 % est presque garanti. Mesure plus
+exigeante, sur le seul meilleur passage : **3/7** à k=1, 7/7 dès k=2. Pour un vrai test de la
+récupération, il faudrait un corpus plus gros ou un découpage plus fin.
+
 Les rapports sont **synthétiques mais réalistes** (générés par
 `generate_reports.py`) : c'est précisément ce qui permet une évaluation
 rigoureuse avec une vérité terrain maîtrisée. Le pipeline tourne **à l'identique**
